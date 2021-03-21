@@ -14,6 +14,19 @@ void printList(struct Node *n)
         printf(" %d ", n->data);
         n = n->next;
     }
+    printf("\n");
+}
+
+void isEmpty(struct Node *n)
+{
+    if (n->data == NULL)
+    {
+        printf("Empty\n");
+    }
+    else
+    {
+        printf("Not empty\n");
+    }
 }
 
 int main()
@@ -35,6 +48,11 @@ int main()
     third->data = 3;
     third->next = NULL;
 
+    struct Node *test = NULL;
+    test = (struct Node *)malloc(sizeof(struct Node));
+
     printList(head);
+    isEmpty(third);
+    isEmpty(test);
     return 0;
 }
