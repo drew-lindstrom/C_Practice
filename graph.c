@@ -42,3 +42,14 @@ struct Graph *createGraph(int V)
 
     return graph;
 }
+
+void addEdge(struct Graph *graph, int src, int dest)
+{
+    struct AdjListNode *newNode = newAdjListNode(dest);
+    newNode->next = graph->array[src].head;
+    graph->array[src].head = newNode;
+
+    newNode = newAdjListNode(src);
+    newNode->next = graph->array[dest].head;
+    graph->array[dest].head = newNode;
+}
